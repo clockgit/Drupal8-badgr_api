@@ -1,0 +1,14 @@
+{
+  "name": "drupal/badgr",
+  "type": "drupal-module",
+  "description": "Uses badgr api to create and issue open badges",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/badgr",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/badgr",
+    "source": "http://cgit.drupalcode.org/badgr"
+  },
+  "require": { }
+}

@@ -1,0 +1,50 @@
+badgr.settings:
+  path: '/admin/config/badgr'
+  defaults:
+    _form: '\Drupal\badgr\Form\ConfigForm'
+    _title: 'Badgr Settings'
+  requirements:
+    _permission: 'badgr settings'
+
+entity.badgr.collection:
+  path: '/admin/badgr'
+  defaults:
+    #_entity_list: 'user'
+    _controller: '\Drupal\system\Controller\SystemController::overview'
+    #_controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Badgr'
+    link_id: 'entity.badgr.collection'
+  requirements:
+    _permission: 'badgr settings'
+
+entity.badgr.collection.issuer:
+  path: '/admin/badgr/issuer'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Issuer'
+  requirements:
+    _permission: 'badgr settings'
+
+entity.badgr.collection.assertion:
+  path: '/admin/badgr/assertion'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Issuer'
+  requirements:
+    _permission: 'badgr settings'
+
+entity.badgr.collection.badge:
+  path: '/admin/badgr/badge'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Issuer'
+  requirements:
+    _permission: 'badgr settings'
+
+entity.badgr.collection.settings:
+  path: '/admin/badgr/settings'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Issuer'
+  requirements:
+    _permission: 'badgr settings'

@@ -1,0 +1,15 @@
+{# In a Twig template we attach the library. #}
+{{ attach_library('badgr/two-col-edit') }}
+
+<div class="row">
+    <div class="col-12">{{ content.head }}</div>
+</div>
+<div class="row">
+    <div class="col-md-9">{{ content.main }}</div>
+    <div class="col-md-3 accordion md-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+        {{ content.sidebar }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">{{ content.foot }}</div>
+</div>

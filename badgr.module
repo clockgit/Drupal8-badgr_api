@@ -1,0 +1,99 @@
+<?php
+
+/**
+ * @file
+ * Contains badgr.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function badgr_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the badgr module.
+    case 'help.page.badgr':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('User badgr api to create and issue open badges.....') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function badgr_toolbar_alter(&$items) {
+  $items['administration']['tray']['#attached']['library'][] = 'badgr/toolbar';
+  return $items;
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+/*function badgr_preprocess_views_view(&$variables) {
+  //ksm(\Drupal::request()->attributes->get('badge_class'));
+  //ksm(\Drupal::request()->attributes);
+  if(\Drupal::request()->attributes->has('badge_class')) {
+    $variables['badge_class'] = \Drupal::request()->attributes->get('badge_class');
+  }
+//  if ($current_path[0] == 'questions') {
+//    $variables['question_id'] = $current_path[1];
+//  }
+}*/
+
+/**
+ * Implements hook_form_alter().
+ */
+function badgr_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if( in_array($form_id,
+    ['badge_class_add_form',
+      'badge_class_edit_form',
+      'node_industry_certifications_form',
+      'node_industry_certifications_edit_form',
+      'node_resource_form',
+      'node_resource_edit_form',
+      ])
+  ) {
+    $form['#attached']['library'][] = "badge_barrio/badgr.confirm";
+
+    //Drupal::messenger()->addStatus('add confirm.js');
+  }
+  //Drupal::messenger()->addStatus($form_id);
+  //node_resource_edit_form  //edit
+  //node_resource_form  //add
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function badgr_form_node_resource_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $user = Drupal::currentUser();
+  $roles = $user->getRoles();
+  $admin = (in_array('administrator', $roles) || in_array('admin', $roles));
+  $tempStore = \Drupal::service('user.private_tempstore')->get('badgr');
+
+  $badge_class = $tempStore->get('badge_class');
+  $type = $tempStore->get('display_id');
+
+
+  if( !empty($badge_class) ) {
+    $form['field_badges']['widget']['#default_value'] = [$badge_class];
+    if($type  && in_array($type, [0,1])) {
+      $form['field_type']['widget']['#default_value'] = [$type];
+    }
+    $form['field_badges']['widget']['#disabled'] = TRUE;
+    $form['field_type']['widget']['#disabled'] = TRUE;
+    if(!$admin) {
+      $form['status']['widget']['value']['#default_value'] = FALSE;
+      $form['status']['widget']['#disabled'] = TRUE;
+    }
+  }else if(!$admin) {
+    Drupal::messenger()->addError('Badge Not Set');
+    $rr = new Symfony\Component\HttpFoundation\RedirectResponse('/badges');
+    $rr->send();
+  }
+}

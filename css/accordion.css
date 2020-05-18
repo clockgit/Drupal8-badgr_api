@@ -1,0 +1,13 @@
+.accordion .card .form-group {
+  margin-bottom: 0px;
+}
+
+.accordion .card .card-header {
+  width: 100%;
+  max-width: 100%;
+  font-size: 1em;
+}
+
+.accordion .card {
+  margin-bottom: 0px;
+}

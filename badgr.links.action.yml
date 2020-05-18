@@ -1,0 +1,20 @@
+entity.issuer.add_form:
+  route_name: entity.issuer.add_form
+  title: 'Add Issuer'
+  appears_on:
+    - entity.issuer.collection
+entity.badge_class.add_form:
+  route_name: entity.badge_class.add_form
+  title: 'Add Badge class'
+  appears_on:
+    - entity.badge_class.collection
+entity.assertion.add_form:
+  route_name: entity.assertion.add_form
+  title: 'Add Assertion'
+  appears_on:
+    - entity.assertion.collection
+entity.assertion_evidence.add_form:
+  route_name: entity.assertion_evidence.add_form
+  title: 'Add Assertion evidence'
+  appears_on:
+    - entity.assertion_evidence.collection

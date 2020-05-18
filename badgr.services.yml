@@ -1,0 +1,4 @@
+services:
+  badgr.api:
+    class: Drupal\badgr\Service\BadgrApiClient
+    arguments: ['@http_client',  '@config.factory', '@messenger']

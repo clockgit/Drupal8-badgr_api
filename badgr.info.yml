@@ -1,0 +1,12 @@
+name: 'badgr'
+type: module
+description: 'Uses badgr api to create and issue open badges'
+core: 8.x
+package: 'badgr'
+dependencies:
+- image
+- inline_entity_form
+- migrate_source_csv
+- migrate_plus
+- migrate_file
+- views

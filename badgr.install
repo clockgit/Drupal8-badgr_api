@@ -1,0 +1,127 @@
+<?php
+use Drupal\image\Entity\ImageStyle;
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\badgr\Entity\Issuer;
+//buildUri($uri)
+//buildUrl($path, $clean_urls = NULL)
+function badgr_uninstall() {
+  taxonomy_handler(TRUE);
+  $imageStyle = ImageStyle::load('badgr_image');
+  if(!empty($imageStyle)) {
+    $imageStyle->delete();
+  }
+  $imageStyle = ImageStyle::load('badgr_image_small');
+  if(!empty($imageStyle)) {
+    $imageStyle->delete();
+  }
+}
+
+function badgr_install() {
+  install_image_style();
+  taxonomy_handler();
+}
+
+function taxonomy_handler($uninstall = FALSE) {
+  $taxonomy = [
+    'Alignments' => [
+      /*'ELA'=>['Read', 'Write', 'Communication', 'Grammar', 'Literature',],
+      'Math'=>['Computation', 'Algebraic', 'Geometric',],
+      'Science'=>['Physical', 'Biological', 'Earth and Space', 'Laboratory',],
+      'Social Studies'=>['World History', 'US History', 'US Government', 'US Constitution', 'Economics', 'Geography',],
+      'Physical Education'=>['Phy Ed', 'Health', 'Safety', 'First Aid', 'Physiology',],
+      'Fine Arts'=>['Art', 'Music', 'Dance', 'Theatre', 'Forensics',],*/
+    ],
+  ];
+
+  foreach ($taxonomy as $name => $terms) {
+    $vid = preg_replace('/[^a-z0-9_]+/', '_', strtolower($name));
+    if($uninstall) {
+      $vocab = Vocabulary::load($vid);
+      if (!empty($vocab)) {
+        $vocab->delete();
+      }
+    }else {
+      $new_taxonomy = Vocabulary::create([
+        'name' => $name,
+        'vid' => $vid,
+        'description' => 'Use tags to group badges on ' . $name . ' topics.',
+        'hierarchy' => 0,
+        'weight' => 0,
+      ]);
+      $new_taxonomy->enable();
+      //$new_taxonomy->enforceIsNew();
+      $new_taxonomy->save();
+
+      foreach ($terms as $term) {
+        $new_term = Term::create([
+          'vid' => $vid,
+          'name' => $term,
+          'description' => '',
+          'parent' => [],
+        ]);
+        //$new_term->enforceIsNew();
+        $new_term->save();
+      }
+    }
+  }
+}
+
+function install_image_style() {
+  /*
+   * create badgr_image
+   */
+  $style = ImageStyle::create(array('name' => 'badgr_image', 'label' => 'Badge Image'));
+  $configuration = array(
+    'uuid' => NULL,
+    'id' => 'image_scale_and_crop',
+    'weight' => 1,
+    'data' => array(
+      'width' => 200,
+      'height' => 200,
+    ),
+  );
+  $effect = \Drupal::service('plugin.manager.image.effect')->createInstance($configuration['id'], $configuration);
+  // Add it to the image style and save.
+  $style->addImageEffect($effect->getConfiguration());
+  $configuration = array(
+    'uuid' => NULL,
+    'id' => 'image_convert',
+    'weight' => 2,
+    'data' => array(
+      'extension' => 'png',
+    ),
+  );
+  $effect = \Drupal::service('plugin.manager.image.effect')->createInstance($configuration['id'], $configuration);
+  // Add it to the image style and save.
+  $style->addImageEffect($effect->getConfiguration());
+  $style->save();
+  /*
+   * create badgr_image_small
+   */
+  $style = ImageStyle::create(array('name' => 'badgr_image_small', 'label' => 'Badge Image Small'));
+  $configuration = array(
+    'uuid' => NULL,
+    'id' => 'image_scale_and_crop',
+    'weight' => 1,
+    'data' => array(
+      'width' => 50,
+      'height' => 50,
+    ),
+  );
+  $effect = \Drupal::service('plugin.manager.image.effect')->createInstance($configuration['id'], $configuration);
+  // Add it to the image style and save.
+  $style->addImageEffect($effect->getConfiguration());
+  $configuration = array(
+    'uuid' => NULL,
+    'id' => 'image_convert',
+    'weight' => 2,
+    'data' => array(
+      'extension' => 'png',
+    ),
+  );
+  $effect = \Drupal::service('plugin.manager.image.effect')->createInstance($configuration['id'], $configuration);
+  // Add it to the image style and save.
+  $style->addImageEffect($effect->getConfiguration());
+  $style->save();
+}

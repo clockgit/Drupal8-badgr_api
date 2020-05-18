@@ -1,0 +1,3 @@
+badgr settings:
+  title: 'Administer Badgr API Settings'
+  description: 'Can configure Badgr API settings @ /admin/config/badgr'

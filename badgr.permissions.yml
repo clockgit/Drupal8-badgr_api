@@ -1,0 +1,126 @@
+add issuer entities:
+  title: 'Create new Issuer entities'
+
+administer issuer entities:
+  title: 'Administer Issuer entities'
+  description: 'Allow to access the administration form to configure Issuer entities.'
+  restrict access: true
+
+delete issuer entities:
+  title: 'Delete Issuer entities'
+
+edit issuer entities:
+  title: 'Edit Issuer entities'
+
+edit own issuer entities:
+  title: 'edit own issuer entities'
+
+view published issuer entities:
+  title: 'View published Issuer entities'
+
+view unpublished issuer entities:
+  title: 'View unpublished Issuer entities'
+
+view all issuer revisions:
+  title: 'View all Issuer revisions'
+
+revert all issuer revisions:
+  title: 'Revert all Issuer revisions'
+  description: 'Role requires permission <em>view Issuer revisions</em> and <em>edit rights</em> for issuer entities in question or <em>administer issuer entities</em>.'
+
+delete all issuer revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Issuer revisions</em> and <em>delete rights</em> for issuer entities in question or <em>administer issuer entities</em>.'
+add badge class entities:
+  title: 'Create new Badge class entities'
+
+administer badge class entities:
+  title: 'Administer Badge class entities'
+  description: 'Allow to access the administration form to configure Badge class entities.'
+  restrict access: true
+
+delete badge class entities:
+  title: 'Delete Badge class entities'
+
+edit badge class entities:
+  title: 'Edit Badge class entities'
+
+edit own badge class entities:
+  title: 'Edit own Badge class entities'
+
+view published badge class entities:
+  title: 'View published Badge class entities'
+
+view unpublished badge class entities:
+  title: 'View unpublished Badge class entities'
+
+view all badge class revisions:
+  title: 'View all Badge class revisions'
+
+revert all badge class revisions:
+  title: 'Revert all Badge class revisions'
+  description: 'Role requires permission <em>view Badge class revisions</em> and <em>edit rights</em> for badge class entities in question or <em>administer badge class entities</em>.'
+
+delete all badge class revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Badge class revisions</em> and <em>delete rights</em> for badge class entities in question or <em>administer badge class entities</em>.'
+add assertion entities:
+  title: 'Create new Assertion entities'
+
+administer assertion entities:
+  title: 'Administer Assertion entities'
+  description: 'Allow to access the administration form to configure Assertion entities.'
+  restrict access: true
+
+delete assertion entities:
+  title: 'Delete Assertion entities'
+
+edit assertion entities:
+  title: 'Edit Assertion entities'
+
+view published assertion entities:
+  title: 'View published Assertion entities'
+
+view unpublished assertion entities:
+  title: 'View unpublished Assertion entities'
+
+view all assertion revisions:
+  title: 'View all Assertion revisions'
+
+revert all assertion revisions:
+  title: 'Revert all Assertion revisions'
+  description: 'Role requires permission <em>view Assertion revisions</em> and <em>edit rights</em> for assertion entities in question or <em>administer assertion entities</em>.'
+
+delete all assertion revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Assertion revisions</em> and <em>delete rights</em> for assertion entities in question or <em>administer assertion entities</em>.'
+add assertion evidence entities:
+  title: 'Create new Assertion evidence entities'
+
+administer assertion evidence entities:
+  title: 'Administer Assertion evidence entities'
+  description: 'Allow to access the administration form to configure Assertion evidence entities.'
+  restrict access: true
+
+delete assertion evidence entities:
+  title: 'Delete Assertion evidence entities'
+
+edit assertion evidence entities:
+  title: 'Edit Assertion evidence entities'
+
+view published assertion evidence entities:
+  title: 'View published Assertion evidence entities'
+
+view unpublished assertion evidence entities:
+  title: 'View unpublished Assertion evidence entities'
+
+view all assertion evidence revisions:
+  title: 'View all Assertion evidence revisions'
+
+revert all assertion evidence revisions:
+  title: 'Revert all Assertion evidence revisions'
+  description: 'Role requires permission <em>view Assertion evidence revisions</em> and <em>edit rights</em> for assertion evidence entities in question or <em>administer assertion evidence entities</em>.'
+
+delete all assertion evidence revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Assertion evidence revisions</em> and <em>delete rights</em> for assertion evidence entities in question or <em>administer assertion evidence entities</em>.'

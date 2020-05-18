@@ -1,0 +1,14 @@
+toolbar:
+  version: 1.x
+  css:
+    theme:
+      css/badgr.css: {}
+two-col-edit:
+  version: 1.x
+  css:
+    theme:
+      css/accordion.css: {}
+  js:
+    js/accordion.js: {}
+  dependencies:
+    - core/jquery

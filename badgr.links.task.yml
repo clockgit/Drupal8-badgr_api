@@ -1,0 +1,123 @@
+# Issuer routing definition
+issuer.settings_tab:
+  route_name: issuer.settings
+  title: 'Settings'
+  base_route: issuer.settings
+
+entity.issuer.canonical:
+  route_name: entity.issuer.canonical
+  base_route: entity.issuer.canonical
+  title: 'View'
+
+entity.issuer.edit_form:
+  route_name: entity.issuer.edit_form
+  base_route: entity.issuer.canonical
+  title: 'Edit'
+
+entity.issuer.version_history:
+  route_name: entity.issuer.version_history
+  base_route: entity.issuer.canonical
+  title: 'Revisions'
+
+entity.issuer.delete_form:
+  route_name:  entity.issuer.delete_form
+  base_route:  entity.issuer.canonical
+  title: Delete
+  weight: 10
+
+# Badge class routing definition
+badge_class.settings_tab:
+  route_name: badge_class.settings
+  title: 'Settings'
+  base_route: badge_class.settings
+
+entity.badge_class.canonical:
+  route_name: entity.badge_class.canonical
+  base_route: entity.badge_class.canonical
+  title: 'View'
+
+entity.badge_class.edit_form:
+  route_name: entity.badge_class.edit_form
+  base_route: entity.badge_class.canonical
+  title: 'Edit'
+
+#entity.badge_class.resource:
+#  route_name: entity.badge_class.resource
+#  base_route: entity.badge_class.canonical
+#  title: 'Resources'
+#
+#entity.badge_class.instructor:
+#  route_name: entity.badge_class.instructor
+#  base_route: entity.badge_class.canonical
+#  title: 'Instructor Resources'
+
+entity.badge_class.version_history:
+  route_name: entity.badge_class.version_history
+  base_route: entity.badge_class.canonical
+  title: 'Revisions'
+
+entity.badge_class.delete_form:
+  route_name:  entity.badge_class.delete_form
+  base_route:  entity.badge_class.canonical
+  title: Delete
+  weight: 10
+
+# Assertion routing definition
+assertion.settings_tab:
+  route_name: assertion.settings
+  title: 'Settings'
+  base_route: assertion.settings
+
+entity.assertion.canonical:
+  route_name: entity.assertion.canonical
+  base_route: entity.assertion.canonical
+  title: 'View'
+
+entity.assertion.edit_form:
+  route_name: entity.assertion.edit_form
+  base_route: entity.assertion.canonical
+  title: 'Edit'
+
+entity.assertion.version_history:
+  route_name: entity.assertion.version_history
+  base_route: entity.assertion.canonical
+  title: 'Revisions'
+
+entity.assertion.delete_form:
+  route_name:  entity.assertion.delete_form
+  base_route:  entity.assertion.canonical
+  title: Delete
+  weight: 10
+
+# Assertion evidence routing definition
+assertion_evidence.settings_tab:
+  route_name: assertion_evidence.settings
+  title: 'Settings'
+  base_route: assertion_evidence.settings
+
+entity.assertion_evidence.canonical:
+  route_name: entity.assertion_evidence.canonical
+  base_route: entity.assertion_evidence.canonical
+  title: 'View'
+
+entity.assertion_evidence.edit_form:
+  route_name: entity.assertion_evidence.edit_form
+  base_route: entity.assertion_evidence.canonical
+  title: 'Edit'
+
+entity.assertion_evidence.version_history:
+  route_name: entity.assertion_evidence.version_history
+  base_route: entity.assertion_evidence.canonical
+  title: 'Revisions'
+
+entity.assertion_evidence.delete_form:
+  route_name:  entity.assertion_evidence.delete_form
+  base_route:  entity.assertion_evidence.canonical
+  title: Delete
+  weight: 10
+
+# badgr.io api
+#api.badge:
+#  route_name: entity.badge_class.version_history
+#  base_route: entity.badge_class.canonical
+#  title: 'Badgr'

@@ -1,0 +1,103 @@
+badgr.settings:
+  title: 'Badgr API Settings'
+  description: 'API settings'
+  parent: entity.badgr.collection.settings
+  route_name: badgr.settings
+  weight: 10
+
+# Issuer menu items definition
+entity.issuer.collection:
+  title: 'Issuer list'
+  route_name: entity.issuer.collection
+  description: 'List Issuer entities'
+  parent: entity.badgr.collection.issuer
+  weight: 20
+
+issuer.admin.structure.settings:
+  title: 'Issuer settings'
+  description: 'Configure Issuer entities'
+  route_name: issuer.settings
+  parent: entity.badgr.collection.issuer
+  weight: 30
+
+# Badge class menu items definition
+entity.badge_class.collection:
+  title: 'Badge class list'
+  route_name: entity.badge_class.collection
+  description: 'List Badge class entities'
+  parent: entity.badgr.collection.badge
+  weight: 20
+
+badge_class.admin.structure.settings:
+  title: 'Badge class settings'
+  description: 'Configure Badge class entities'
+  route_name: badge_class.settings
+  parent: entity.badgr.collection.badge
+  weight: 30
+
+# Assertion menu items definition
+entity.assertion.collection:
+  title: 'Assertion list'
+  route_name: entity.assertion.collection
+  description: 'List Assertion entities'
+  parent: entity.badgr.collection.assertion
+  weight: 20
+
+assertion.admin.structure.settings:
+  title: 'Assertion settings'
+  description: 'Configure Assertion entities'
+  route_name: assertion.settings
+  parent: entity.badgr.collection.assertion
+  weight: 30
+
+
+####### Groups on badgr settings page
+entity.badgr.collection:
+  title: Badgr
+  route_name: entity.badgr.collection
+  description: 'Manage Badgr entities.'
+  parent: system.admin
+  weight: -10
+
+entity.badgr.collection.issuer:
+  route_name: entity.badgr.collection.issuer
+  title: 'Issuer'
+  parent: entity.badgr.collection
+  description: 'description'
+  weight: -5
+
+entity.badgr.collection.assertion:
+  route_name: entity.badgr.collection.assertion
+  title: 'Assertion (Issued Badge)'
+  parent: entity.badgr.collection
+  description: 'description'
+  weight: -5
+
+entity.badgr.collection.badge:
+  route_name: entity.badgr.collection.badge
+  title: 'Badge Class'
+  parent: entity.badgr.collection
+  description: 'description'
+  weight: -5
+
+entity.badgr.collection.settings:
+  route_name: entity.badgr.collection.settings
+  title: 'Badgr Settings'
+  parent: entity.badgr.collection
+  description: 'description'
+  weight: -5
+
+# Assertion evidence menu items definition
+entity.assertion_evidence.collection:
+  title: 'Assertion evidence list'
+  route_name: entity.assertion_evidence.collection
+  description: 'List Assertion evidence entities'
+  parent: entity.badgr.collection.assertion
+  weight: 200
+
+assertion_evidence.admin.structure.settings:
+  title: 'Assertion evidence settings'
+  description: 'Configure Assertion evidence entities'
+  route_name: assertion_evidence.settings
+  parent: entity.badgr.collection.assertion
+  weight: 200

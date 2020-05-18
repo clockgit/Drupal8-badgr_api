@@ -1,0 +1,22 @@
+/**
+ * @file
+ * Styling for the badgr toolbar icons.
+ */
+
+/**
+ * Toolbar tray icons.
+ */
+.toolbar-icon-entity-badgr-collection:before {
+  background-image: url("../icons/000000/badgr.svg");
+}
+.no-svg .toolbar-tray .toolbar-icon-entity-badgr-collection:before {
+  background-image: url("../icons/000000/badgr.png");
+}
+.toolbar-icon-entity-badgr-collection:active:before,
+.toolbar-icon-entity-badgr-collection.is-active:before {
+  background-image: url("../icons/c30a28/badgr.svg");
+}
+.no-svg .toolbar-icon-entity-badgr-collection:active:before,
+.no-svg .toolbar-icon-entity-badgr-collection.is-active:before {
+  background-image: url("../icons/c30a28/badgr.png");
+}
